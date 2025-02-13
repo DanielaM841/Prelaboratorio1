@@ -3,7 +3,7 @@
 ;
 ; Created: 6/02/2025 15:58:47
 ; Author : Daniela Moreira 23841
-; Descripcion: Creaciï¿½n de contador binario de 4 bitscon un boton de incremento y un boton de decremento 
+; Descripcion: Creación de contador binario de 4 bitscon un boton de incremento y un boton de decremento 
 ;
 // Encabezado
 .include "M328PDEF.inc"
@@ -44,9 +44,9 @@ MAIN:
 	// Volver a leer PIND
 	MOV		R17, R16 //copia el estado actual del pin en R17
 	SBRS	R16, 2 // Salta si el bit 2 del PIND es 1 (no apachado)
-	CALL	SUMA //si el botï¿½n esta presionado suma
-	SBRS	R16, 3 //Si el bit 3 de PIND es 1 (botï¿½n NO presionado), salta la siguiente instrucciï¿½n
-	CALL	RESTA // Si el boton 2 estï¿½ presionado, llama a RESTA
+	CALL	SUMA //si el botón esta presionado suma
+	SBRS	R16, 3 //Si el bit 3 de PIND es 1 (botón NO presionado), salta la siguiente instrucción
+	CALL	RESTA // Si el boton 2 está presionado, llama a RESTA
 	RJMP	MAIN
 
 
@@ -57,6 +57,7 @@ SUMA:
 	OUT		PORTB, R18 //si no es 16 cargar el valor 
 	RJMP	MAIN 
 OF1:
+	LDI		R18, 0x00
 	OUT		PORTB, R18
 	RJMP	MAIN
 UF2:
